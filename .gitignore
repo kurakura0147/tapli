@@ -1,2 +1,4 @@
+/log/*
 /tmp/*
-!/tmp/.gitkeep
+!/log/.keep
+!/tmp/.keep
