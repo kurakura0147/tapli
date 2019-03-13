@@ -1,0 +1,14 @@
+$base-color: #F1F1F1;
+$content-color: #84634d;
+
+@mixin nav   {
+  padding: 10px 80px;
+  height: 80px;
+  background-color: $base-color;
+  color: $content-color;
+}
+
+@mixin flex_center {
+  display: flex;
+  align-items: center;
+}

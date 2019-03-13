@@ -1,3 +1,62 @@
-// Place all the styles related to the datas controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "./variable";
+
+.header {
+  @include nav;
+  @include flex_center;
+  justify-content: space-around;
+  font-size: 40px;
+  &__center {
+    @include flex_center;
+    &--logo {
+      font-size: 70px;
+      margin: {
+        left: 40px;
+        right: 40px;
+      }
+    }
+  }
+}
+
+.main-content {
+  text-align: center;
+  color: $content-color;
+  &__about {
+    height: calc(100vh - 200px);
+    &--up {
+      margin: 20px 240px;
+      background-color: $base-color;
+      display: flex;
+      list-style: none;
+      overflow: hidden;
+      & li {
+        padding:20px;
+
+        img {
+          height: 600px;
+          width: 920px;
+        }
+      }
+    }
+    &--down {
+      padding: 20px 0;
+      display: flex;
+      background-color: $base-color;
+      opacity: 0.7;
+      img {
+        height: 600px;
+        margin-right:20px;
+        position: relative;
+        right:250px;
+      }
+    }
+  }
+  &__sample {
+    background-color: $base-color;
+    height: calc(100vh - 160px);
+  }
+}
+
+.footer {
+  @include nav;
+  text-align: center;
+}
