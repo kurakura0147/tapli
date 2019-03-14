@@ -1,7 +1,16 @@
 .header
   .header__left
-    .i.fas.fa-bars
-  .header__center
+    .down-menu
+      .i.fas.fa-bars
+        %ul.child
+          %li.child-hidden
+          = link_to root_path do
+            %li.child
+              menu1
+          = link_to root_path do
+            %li.child
+              menu2
+  = link_to "/", class: "header__center" do
     .i.fas.fa-bed
     / .i.fas.fa-arrow-down
     .header__center--logo
@@ -9,7 +18,17 @@
     / .i.fas.fa-arrow-up
     .i.fas.fa-running
   .header__right
-    .i.fas.fa-user-circle
+    .down-menu
+      .i.fas.fa-user-circle
+        %ul.child
+          %li.child-hidden
+          = link_to root_path do
+            %li.child
+              menu1
+          = link_to root_path do
+            %li.child
+              menu2
+
 .main-content
   .main-content__about--up
     %li
@@ -23,12 +42,28 @@
 
 .main-content
   .main-content__sample
-
+    .main-content__sample--title
+      Let's Record
+    .main-content__sample--do
+      .main-content__sample--left
+        .i.fas.fa-bed.fa-4x
+        %br
+        Sleep state
+      .main-content__sample--center
+        .i.fas.fa-arrow-right.fa-1x &nbsp;&nbsp;
+        .i.fas.fa-chart-line.fa-8x
+        &nbsp;&nbsp;
+        .i.fas.fa-arrow-left.fa-1x
+      .main-content__sample--right
+        .i.fas.fa-running.fa-4x
+        %br
+        Physical condition
 
 .main-content
   .main-content__about--down
     = image_tag "sleep-cat.jpg"
     = image_tag "sleep-dog.jpg"
+
 .footer
   Copyright © yuta All Rights Reserved.
   .i.fab.fa-github.fa-3x
