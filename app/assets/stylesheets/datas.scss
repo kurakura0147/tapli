@@ -1,12 +1,21 @@
 @import "./variable";
 
+* {
+font-family: 'Chalkboard SE',sans-serif;
+}
 .header {
+  position: fixed;
+  width: calc(100vw - 160px);
+  top: 0;
   @include nav;
   @include flex_center;
   justify-content: space-around;
   font-size: 40px;
+  z-index: 40;
   &__center {
     @include flex_center;
+    color: $content-color;
+    text-decoration: none;
     &--logo {
       font-size: 70px;
       margin: {
@@ -17,20 +26,50 @@
   }
 }
 
+//ドロップダウンメニュー
+ul.child{
+  display: none;
+  position: absolute;
+  font-size: 18px;
+  & a {
+    color: $content-color;
+    text-decoration: none;
+  }
+  li.child-hidden {
+    opacity: 0;
+    height: 28px;
+  }
+  li.child{
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    background-color: $base-color;
+    border-bottom: 2px solid $content-color;
+    border-left: 2px solid $content-color;
+    border-right: 2px solid $content-color;
+    &:hover{
+      opacity: 0.6;
+    }
+  }
+}
+
+
+
 .main-content {
   text-align: center;
   color: $content-color;
+  z-index: 20;
+  position: relative;
   &__about {
     height: calc(100vh - 200px);
     &--up {
+      @include about-image;
       margin: 20px 240px;
-      background-color: $base-color;
-      display: flex;
       list-style: none;
       overflow: hidden;
+      margin-top: 120px;
       & li {
         padding:20px;
-
         img {
           height: 600px;
           width: 920px;
@@ -38,10 +77,9 @@
       }
     }
     &--down {
+      @include about-image;
       padding: 20px 0;
-      display: flex;
-      background-color: $base-color;
-      opacity: 0.7;
+      overflow: hidden;
       img {
         height: 600px;
         margin-right:20px;
@@ -51,8 +89,30 @@
     }
   }
   &__sample {
+    position: relative;
+    z-index: 20;
+    padding: 20px;
     background-color: $base-color;
-    height: calc(100vh - 160px);
+    height: 440px;
+    font-family: 'Chalkboard SE',sans-serif;
+    font-size: 40px;
+    &--title {
+      font-size: 60px;
+    }
+    &--do {
+      display: flex;
+      justify-content: space-around;
+      align-items:flex-end;
+
+    }
+    &--center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &--right {
+
+    }
   }
 }
 

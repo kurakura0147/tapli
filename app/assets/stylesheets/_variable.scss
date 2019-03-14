@@ -12,3 +12,9 @@ $content-color: #84634d;
   display: flex;
   align-items: center;
 }
+
+@mixin about-image {
+  background-color: $base-color;
+  display: flex;
+  opacity: 0.7;
+}
