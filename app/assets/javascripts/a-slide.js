@@ -15,4 +15,5 @@ $(document).on('turbolinks:load', function() {
             }
             });
         }, 4000);
+
 });

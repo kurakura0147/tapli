@@ -4,9 +4,9 @@
       .i.fas.fa-bars
         %ul.child
           %li.child-hidden
-          = link_to root_path do
+          = link_to sample_datas_path do
             %li.child
-              menu1
+              how to page
           = link_to root_path do
             %li.child
               menu2
@@ -24,10 +24,10 @@
           %li.child-hidden
           = link_to root_path do
             %li.child
-              menu1
+              user-menu1
           = link_to root_path do
             %li.child
-              menu2
+              user-menu2
 
 .main-content
   .main-content__about--up
@@ -46,13 +46,15 @@
       Let's Record
     .main-content__sample--do
       .main-content__sample--left
-        .i.fas.fa-bed.fa-4x
+        .i.fas.fa-bed.fa-4x &nbsp;
         %br
-        Sleep state
+        Sleep
+        %br
+        state
       .main-content__sample--center
-        .i.fas.fa-arrow-right.fa-1x &nbsp;&nbsp;
-        .i.fas.fa-chart-line.fa-8x
-        &nbsp;&nbsp;
+        .i.fas.fa-arrow-right.fa-1x &nbsp;
+        = image_tag "sample-gragh.png"
+        &nbsp;
         .i.fas.fa-arrow-left.fa-1x
       .main-content__sample--right
         .i.fas.fa-running.fa-4x
