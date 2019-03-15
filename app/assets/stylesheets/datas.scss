@@ -93,7 +93,7 @@ ul.child{
     z-index: 20;
     padding: 20px;
     background-color: $base-color;
-    height: 440px;
+    height: 480px;
     font-family: 'Chalkboard SE',sans-serif;
     font-size: 40px;
     &--title {
@@ -109,6 +109,9 @@ ul.child{
       display: flex;
       justify-content: center;
       align-items: center;
+      img {
+        height: 380px;
+      }
     }
     &--right {
 
