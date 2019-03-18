@@ -30,7 +30,7 @@ font-family: 'Chalkboard SE',sans-serif;
 ul.child{
   display: none;
   position: absolute;
-  font-size: 18px;
+  font-size: 22px;
   & a {
     color: $content-color;
     text-decoration: none;
@@ -44,9 +44,9 @@ ul.child{
     padding: 20px;
     text-decoration: none;
     background-color: $base-color;
-    border-bottom: 2px solid $content-color;
-    border-left: 2px solid $content-color;
-    border-right: 2px solid $content-color;
+    border-bottom: 3px solid $content-color;
+    border-left: 3px solid $content-color;
+    border-right: 3px solid $content-color;
     &:hover{
       opacity: 0.6;
     }
@@ -77,27 +77,32 @@ ul.child{
       }
     }
     &--down {
-      @include about-image;
       padding: 20px 0;
       overflow: hidden;
+      .fadein {
+        opacity : 0;
+        transform: translateY(100px);
+        transition: all 3s;
+        display: flex;
+      }
       img {
-        height: 600px;
+        height: calc(100vh - 240px);
         margin-right:20px;
         position: relative;
-        right:250px;
+        right:0px;
       }
     }
   }
   &__sample {
     position: relative;
     z-index: 20;
-    padding: 20px;
+    padding: 40px;
     background-color: $base-color;
-    height: 480px;
-    font-family: 'Chalkboard SE',sans-serif;
+    height: calc(100vh - 120px);
     font-size: 40px;
     &--title {
-      font-size: 60px;
+      font-size: 80px;
+      margin-bottom: 60px;
     }
     &--do {
       display: flex;
@@ -110,7 +115,7 @@ ul.child{
       justify-content: center;
       align-items: center;
       img {
-        height: 380px;
+        height: 420px;
       }
     }
     &--right {
