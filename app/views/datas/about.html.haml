@@ -10,6 +10,12 @@
           = link_to root_path do
             %li.child
               menu2
+          = link_to root_path do
+            %li.child
+              menu3
+          = link_to root_path do
+            %li.child
+              menu4
   = link_to "/", class: "header__center" do
     .i.fas.fa-bed
     / .i.fas.fa-arrow-down
@@ -28,7 +34,12 @@
           = link_to root_path do
             %li.child
               user-menu2
-
+          = link_to root_path do
+            %li.child
+              user-menu3
+          = link_to root_path do
+            %li.child
+              user-menu4
 .main-content
   .main-content__about--up
     %li
@@ -63,8 +74,9 @@
 
 .main-content
   .main-content__about--down
-    = image_tag "sleep-cat.jpg"
-    = image_tag "sleep-dog.jpg"
+    .fadein
+      = image_tag "sleep-cat.jpg"
+      = image_tag "sleep-dog.jpg"
 
 .footer
   Copyright © yuta All Rights Reserved.
