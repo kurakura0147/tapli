@@ -10,6 +10,11 @@ class DatasController < ApplicationController
   end
 
   def sample
+    @add = [9]
+    gon.add = @add
+    @data = [1,2,3]
+    gon.data = @data
+    gon.data << gon.add
   end
 
 end
