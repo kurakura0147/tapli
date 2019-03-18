@@ -1,9 +1,6 @@
 $(document).on('turbolinks:load', function() {
 
-
-
     $(function(){
-
         var ctx = document.getElementById("myLine2Chart");
         var myLine2Chart = new Chart(ctx, {
           //グラフの種類
@@ -40,7 +37,7 @@ $(document).on('turbolinks:load', function() {
                       //結合点より外でマウスホバーを認識する範囲（ピクセル単位）
                       pointHitRadius: 15,
                       //グラフのデータ
-                      data: [12, 19, 3, 5, 2, 3]
+                      data: gon.data
                   },
                   {
                       //凡例
@@ -91,15 +88,10 @@ $(document).on('turbolinks:load', function() {
                   mode: 'single'
               }
           }
-
-
-            });
-
+        });
     });
 
-
     $(function(){
-
         //折れ線グラフ
         var ctx = document.getElementById("sleepLineChart");
         var sleepLineChart = new Chart(ctx, {
@@ -135,8 +127,6 @@ $(document).on('turbolinks:load', function() {
               }
           }
         });
-
     })
-
 
 });
