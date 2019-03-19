@@ -10,17 +10,16 @@
       = "email : #{@user.email}"
     %br
     .user-content__left--physical
+      < now >
+      %br
       height : 190 cm
       %br
       weight : 200 kg
 
-
   .user-content__right
     .user-content__right--physical
       physical-gragh
-    .user-content__right--sleep
-      sleep-gragh
-
+      = image_tag "sample-gragh.png", class: "user-content__right--image"
 .footer
   Copyright © yuta All Rights Reserved.
   .i.fab.fa-github.fa-3x

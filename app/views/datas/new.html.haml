@@ -1,0 +1,15 @@
+= render 'shared/header'
+
+.user-content
+  Please record
+
+  = form_with(model: @data, url: datas_path, method: :post) do |f|
+    = f.label :weight
+    = f.text_field :weight
+    = f.label :height
+    = f.text_field :height
+    = f.label :record_day
+    = f.date_field :record_day
+    = f.button "record"
+
+//体重計に乗っている姿と身長を測っている姿をそれぞれ表示して、フォームに入力。上のセンターに日付の入力欄の表示

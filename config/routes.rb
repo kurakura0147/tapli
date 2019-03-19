@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+
   root 'datas#about'
-  resources :datas, only: %i(index show) do
+  resources :datas, only: [:index, :new, :create] do
     collection do
       get :about
       get :sample
     end
   end
 
-  resources :users, only: %i(index show)
+  devise_for :users
+  resources :users, only: %i(show)
 
 end
