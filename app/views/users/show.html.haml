@@ -10,12 +10,15 @@
       = "email : #{@user.email}"
     %br
     .user-content__left--physical
-      < now >
-      %br
-      height : 190 cm
-      %br
-      weight : 200 kg
+      - @data.first(1).each do |data|
+        = "最新日 : #{data.record_day}"
+        %br
+        = "height : #{data.height} cm"
+        %br
+        = "weight : #{data.weight} kg"
+        %br
 
+        = "BMI :  #{(data.weight.to_i*10000.quo(data.height.to_i**2)).round(1).to_f}"
   .user-content__right
     .user-content__right--physical
       physical-gragh
