@@ -1,0 +1,37 @@
+@import "./variable";
+
+.user-content {
+  @include flex_center;
+  height: calc(100vh - 280px);
+  margin: 120px 0 20px;
+  padding: 20px 240px;
+  background-color: $base-color;
+  color: $content-color;
+  justify-content: space-around;
+  &__left {
+    width: 460px;
+    &--image {
+      height: 500px;
+      position: absolute;
+      top: calc(100vh/6);
+      color: $content-color;
+    }
+    &--name {
+      @include user-profile;
+
+    }
+    &--email {
+      @include user-profile;
+    }
+    &--physical {
+      @include user-profile;
+    }
+  }
+  &__right {
+    width: 460px;
+
+  }
+
+
+
+}

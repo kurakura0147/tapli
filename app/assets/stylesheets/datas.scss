@@ -10,6 +10,7 @@ font-family: 'Chalkboard SE',sans-serif;
   @include nav;
   @include flex_center;
   justify-content: space-around;
+  margin-bottom: 400px;
   font-size: 40px;
   z-index: 40;
   &__center {
