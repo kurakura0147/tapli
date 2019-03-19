@@ -7,14 +7,19 @@
   padding: 20px 240px;
   background-color: $base-color;
   color: $content-color;
-  justify-content: space-around;
+  justify-content: flex-start;
   &__left {
-    width: 460px;
+    width: 400px;
     &--image {
       height: 500px;
       position: absolute;
-      top: calc(100vh/6);
+      top: calc(100vh/5.6);
+      left:120px;
       color: $content-color;
+      background-color: white;
+      border-radius: 120px;
+      border:solid 4px $content-color;
+
     }
     &--name {
       @include user-profile;
@@ -29,6 +34,16 @@
   }
   &__right {
     width: 460px;
+    &--image {
+      height: 460px;
+      width: 700px;
+      margin-top: 10px;
+    }
+    &--physical {
+      font-size: 30px;
+      font-weight: bold;
+      padding: 10px;
+    }
 
   }
 

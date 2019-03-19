@@ -18,38 +18,38 @@
               menu4
   = link_to root_path, class: "header__center" do
     .i.fas.fa-bed
-    / .i.fas.fa-arrow-down
     .header__center--logo
       .i.fas.fa-chart-line
-    / .i.fas.fa-arrow-up
     .i.fas.fa-running
   .header__right
     .down-menu
       .i.fas.fa-user-circle
-
-
         %ul.child
           %li.child-hidden
           - if user_signed_in?
-            = link_to destroy_user_session_path, method: :delete do
+            = link_to new_data_path do
               %li.child
-                Log_out
+                .i.fas.fa-plus
+                new record
             = link_to user_path(current_user.id) do
               %li.child
+                .i.fas.fa-user-check
                 user-mypage
             = link_to root_path do
               %li.child
-                record
-            = link_to root_path do
-              %li.child
                 user-menu
-
+            = link_to destroy_user_session_path, method: :delete do
+              %li.child
+                .i.fas.fa-sign-out-alt
+                Log_out
           - else
             = link_to new_user_registration_path do
               %li.child
+                .i.fas.fa-user-plus
                 Sign_up
             = link_to new_user_session_path do
               %li.child
+                .i.fas.fa-sign-in-alt
                 Log_in
             = link_to root_path do
               %li.child
