@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_18_194108) do
+ActiveRecord::Schema.define(version: 2019_03_19_150711) do
 
   create_table "data", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "weight"
     t.string "height"
-    t.string "bmi"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "record_day"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_data_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
