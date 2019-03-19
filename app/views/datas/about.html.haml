@@ -16,7 +16,7 @@
           = link_to root_path do
             %li.child
               menu4
-  = link_to "/", class: "header__center" do
+  = link_to root_path, class: "header__center" do
     .i.fas.fa-bed
     / .i.fas.fa-arrow-down
     .header__center--logo
@@ -28,18 +28,24 @@
       .i.fas.fa-user-circle
         %ul.child
           %li.child-hidden
-          = link_to root_path do
-            %li.child
-              user-menu1
-          = link_to root_path do
-            %li.child
-              user-menu2
-          = link_to root_path do
-            %li.child
-              user-menu3
-          = link_to root_path do
-            %li.child
-              user-menu4
+          - if user_signed_in?
+            = link_to destroy_user_session_path, method: :delete do
+              %li.child
+                Log_out
+            = link_to root_path do
+              %li.child
+                user-menu
+          - else
+            = link_to new_user_registration_path do
+              %li.child
+                Sign_up
+            = link_to new_user_session_path do
+              %li.child
+                Log_in
+            = link_to root_path do
+              %li.child
+                user-menu
+
 .main-content
   .main-content__about--up
     %li
