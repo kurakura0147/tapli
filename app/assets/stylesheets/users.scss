@@ -7,7 +7,6 @@
   padding: 20px 240px;
   background-color: $base-color;
   color: $content-color;
-  justify-content: flex-start;
   &__left {
     width: 400px;
     &--image {
@@ -34,19 +33,32 @@
   }
   &__right {
     width: 460px;
-    &--image {
-      height: 460px;
-      width: 700px;
-      margin-top: 10px;
-    }
+    margin-left: 20px;
     &--physical {
       font-size: 30px;
       font-weight: bold;
       padding: 10px;
     }
+    &--gragh {
+      width:740px;
+      height: 380px;
+      line-height: 600px;
+      background-color: white;
+      border-radius: 10px;
+      border:solid 2px $content-color;
 
+
+
+        canvas#myLine2Chart {
+          vertical-align: middle;
+          // height: 460px;
+          // #myLine2Chart {
+          // width: 700px;
+          // margin-top: 10px;
+          // }
+        }
+    }
   }
-
 
 
 }
