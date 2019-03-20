@@ -3,6 +3,8 @@
 .user-content
   .user-content__left
     = image_tag "boy.jpg" , class: "user-content__left--image"
+    / = image_tag "boy2.png" , class: "user-content__left--image"
+
     .user-content__left--name
       = "name : #{@user.name}"
     %br
@@ -10,8 +12,8 @@
       = "email : #{@user.email}"
     %br
     .user-content__left--physical
-      - @data.first(1).each do |data|
-        = "最新日 : #{data.record_day}"
+      - @user_data.each do |data|
+        = "Latest date : #{data.record_day}"
         %br
         = "height : #{data.height} cm"
         %br
@@ -22,7 +24,9 @@
   .user-content__right
     .user-content__right--physical
       physical-gragh
-      = image_tag "sample-gragh.png", class: "user-content__right--image"
+    .user-content__right--gragh
+      %canvas#myLine2Chart
+
 .footer
   Copyright © yuta All Rights Reserved.
   .i.fab.fa-github.fa-3x

@@ -1,6 +1,5 @@
 $(document).on('turbolinks:load', function() {
 
-    $(function(){
         var ctx = document.getElementById("myLine2Chart");
         var myLine2Chart = new Chart(ctx, {
           //グラフの種類
@@ -8,12 +7,12 @@ $(document).on('turbolinks:load', function() {
           //データの設定
           data: {
               //データ項目のラベル
-              labels: ["1月", "2月", "3月", "4月", "5月", "6月"],
+              labels: gon.day,
               //データセット
               datasets: [
                   {
                       //凡例
-                      label: "1年目",
+                      label: "weight",
                       //面の表示
                       fill: false,
                       //線のカーブ
@@ -37,11 +36,11 @@ $(document).on('turbolinks:load', function() {
                       //結合点より外でマウスホバーを認識する範囲（ピクセル単位）
                       pointHitRadius: 15,
                       //グラフのデータ
-                      data: gon.data
+                      data: gon.weight
                   },
                   {
                       //凡例
-                      label: "2年目",
+                      label: "height",
                       //面の表示
                       fill: false,
                       //線のカーブ
@@ -65,7 +64,7 @@ $(document).on('turbolinks:load', function() {
                       //結合点より外でマウスホバーを認識する範囲（ピクセル単位）
                       pointHitRadius: 10,
                       //グラフのデータ
-                      data: [15, 15, 6, 8, 5, 6]
+                      data: gon.height
                   }
               ]
           },
@@ -89,9 +88,8 @@ $(document).on('turbolinks:load', function() {
               }
           }
         });
-    });
 
-    $(function(){
+
         //折れ線グラフ
         var ctx = document.getElementById("sleepLineChart");
         var sleepLineChart = new Chart(ctx, {
@@ -127,6 +125,5 @@ $(document).on('turbolinks:load', function() {
               }
           }
         });
-    })
 
 });
