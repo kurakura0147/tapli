@@ -65,7 +65,7 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem 'pry-rails'
 gem 'pry-byebug'
-gem 'devise'
+gem "devise", ">= 4.6.0"
 gem 'jquery-rails'
 gem 'chart-js-rails'
 gem 'gon'
