@@ -12,7 +12,7 @@ class DatasController < ApplicationController
   def create
     @data = Datum.new(params_datum)
     @data.save!
-    redirect_to root_path
+    redirect_to user_path
   end
 
   def show
@@ -27,7 +27,7 @@ class DatasController < ApplicationController
   def update
     @data = Datum.includes(:user).find(13)
     @data.update(params_datum)
-    redirect_to root_path
+    redirect_to user_path
   end
 
   def about
