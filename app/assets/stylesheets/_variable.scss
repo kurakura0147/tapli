@@ -32,3 +32,22 @@ $content-color: #84634d;
   font-size: 20px;
   border:solid 4px $content-color;
 }
+
+@mixin icon-button {
+  background-color: white;
+  border-radius: 10px;
+  border:solid 3px $content-color;
+  text-decoration: none;
+  color: $content-color;
+  padding: 10px;
+  margin-left: 20px;
+  max-height: 25px;
+  width: 200px;
+}
+
+@mixin icon-hover {
+  background-color: $content-color;
+  color: white;
+}
+
+

@@ -5,4 +5,11 @@ $(document).on('turbolinks:load', function() {
         }, function(){
             $("ul.child",this).slideUp();
         });
+
+        $('.up-menu').hover(function(){
+            $("ul:not(:animated)", this).slideDown();
+        }, function(){
+            $("ul.parent",this).slideUp();
+        });
+
 });

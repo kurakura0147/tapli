@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'datas#about'
-  resources :datas, only: %i(index new create) do
+  resources :datas, only: %i(index new create edit update) do
     collection do
       get :about
       get :sample

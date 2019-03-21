@@ -1,5 +1,4 @@
 $(document).on('turbolinks:load', function() {
-
         var ctx = document.getElementById("myLine2Chart");
         var myLine2Chart = new Chart(ctx, {
           //グラフの種類
@@ -12,7 +11,7 @@ $(document).on('turbolinks:load', function() {
               datasets: [
                   {
                       //凡例
-                      label: "weight",
+                      label: "weight [kg]",
                       //面の表示
                       fill: false,
                       //線のカーブ
@@ -40,7 +39,7 @@ $(document).on('turbolinks:load', function() {
                   },
                   {
                       //凡例
-                      label: "height",
+                      label: "height [cm]",
                       //面の表示
                       fill: false,
                       //線のカーブ
@@ -65,6 +64,34 @@ $(document).on('turbolinks:load', function() {
                       pointHitRadius: 10,
                       //グラフのデータ
                       data: gon.height
+                  },
+                  {
+                      //凡例
+                      label: "Standard weight [kg]",
+                      //面の表示
+                      fill: false,
+                      //線のカーブ
+                      lineTension: 0,
+                      //背景色
+                      backgroundColor: "rgba(255, 212, 0,0.4)",
+                      //枠線の色
+                      borderColor: "rgba(255, 212, 0,1)",
+                      //結合点の枠線の色
+                      pointBorderColor: "rgba(255, 212, 0,1)",
+                      //結合点の背景色
+                      pointBackgroundColor: "#fff",
+                      //結合点のサイズ
+                      pointRadius: 5,
+                      //結合点のサイズ（ホバーしたとき）
+                      pointHoverRadius: 8,
+                      //結合点の背景色（ホバーしたとき）
+                      pointHoverBackgroundColor: "rgba(255, 212, 0,1)",
+                      //結合点の枠線の色（ホバーしたとき）
+                      pointHoverBorderColor: "rgba(255, 212, 0,1)",
+                      //結合点より外でマウスホバーを認識する範囲（ピクセル単位）
+                      pointHitRadius: 10,
+                      //グラフのデータ
+                      data: gon.standard_weight
                   }
               ]
           },
@@ -88,42 +115,4 @@ $(document).on('turbolinks:load', function() {
               }
           }
         });
-
-
-        //折れ線グラフ
-        var ctx = document.getElementById("sleepLineChart");
-        var sleepLineChart = new Chart(ctx, {
-          //グラフの種類
-          type: 'line',
-          //データの設定
-          data: {
-              //データ項目のラベル
-              labels: ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
-              //データセット
-              datasets: [{
-                  //凡例
-                  label: "Sleep state",
-                  //背景色
-                  backgroundColor: "rgba(75,192,192,0.4)",
-                  //枠線の色
-                  borderColor: "rgba(75,192,192,1)",
-                  //グラフのデータ
-                  data: [1, 10, 2, 8, 6, 7, 4]
-              }]
-          },
-          //オプションの設定
-          options: {
-              responsive: true,
-              scales: {
-                  //縦軸の設定
-                  yAxes: [{
-                      ticks: {
-                          //最小値を0にする
-                          beginAtZero: true
-                      }
-                  }]
-              }
-          }
-        });
-
 });

@@ -2,7 +2,6 @@ class DatasController < ApplicationController
 
     before_action :authenticate_user!, except: [:sample, :about ]
 
-
   def index
   end
 
@@ -17,7 +16,18 @@ class DatasController < ApplicationController
   end
 
   def show
-    @data = Datum.find(1)
+    @data = Datum.find()
+  end
+
+  def edit
+    @user = User.find(current_user.id)
+    @data = Datum.includes(:user).find(13)
+  end
+
+  def update
+    @data = Datum.includes(:user).find(13)
+    @data.update(params_datum)
+    redirect_to root_path
   end
 
   def about
@@ -36,6 +46,5 @@ class DatasController < ApplicationController
   def params_datum
     params.require(:datum).permit(:weight, :height, :record_day).merge(user_id: current_user.id)
   end
-
 
 end

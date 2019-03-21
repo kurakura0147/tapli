@@ -15,8 +15,11 @@ class UsersController < ApplicationController
     end
 
     height = []
+    standard_weight = []
     @height_data.each do |num|
       height << num
+      standard = (num.to_i)**2 * 22/10000
+      standard_weight << standard
     end
 
     day = []
@@ -26,6 +29,7 @@ class UsersController < ApplicationController
 
     gon.height = height
     gon.weight = weight
+    gon.standard_weight = standard_weight
     gon.day = day
 
   end

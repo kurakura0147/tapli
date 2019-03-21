@@ -3,7 +3,7 @@
 .user-content
   .user-content__left
     = image_tag "boy.jpg" , class: "user-content__left--image"
-    / = image_tag "boy2.png" , class: "user-content__left--image"
+    = image_tag "boy2.png" , class: "user-content__left--image"
 
     .user-content__left--name
       = "name : #{@user.name}"
@@ -19,7 +19,6 @@
         %br
         = "weight : #{data.weight} kg"
         %br
-
         = "BMI :  #{(data.weight.to_i*10000.quo(data.height.to_i**2)).round(1).to_f}"
   .user-content__right
     .user-content__right--physical
@@ -28,5 +27,16 @@
       %canvas#myLine2Chart
 
 .footer
-  Copyright © yuta All Rights Reserved.
-  .i.fab.fa-github.fa-3x
+  .button__icon
+    = link_to root_path, class: "button__icon--link" do
+      top
+    .up-menu
+      .button__icon--link
+        edit
+        %ul.parent
+          = link_to edit_user_registration_path do
+            %li.child
+              edit user
+          = link_to edit_data_path do
+            %li.child
+              edit gragh
