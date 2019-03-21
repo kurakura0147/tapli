@@ -55,7 +55,6 @@ ul.child{
 }
 
 
-
 .main-content {
   text-align: center;
   color: $content-color;
@@ -119,13 +118,41 @@ ul.child{
         height: 420px;
       }
     }
-    &--right {
-
-    }
   }
 }
 
 .footer {
   @include nav;
   text-align: center;
+  .button__icon {
+    @include flex_center;
+    &--link {
+      @include icon-button;
+      &:hover {
+        @include icon-hover;
+      }
+    }
+  }
+}
+
+//ドロップアップメニュー
+ul.parent{
+  display: none;
+  width:  200px;
+  position: relative;
+  & a {
+    color: $content-color;
+    text-decoration: none;
+  }
+  li.child{
+    display: block;
+    position: relative;
+    bottom: 130px;
+    right: 32px;
+    padding: 10px;
+    @include icon-button;
+    &:hover{
+      @include icon-hover;
+    }
+  }
 }

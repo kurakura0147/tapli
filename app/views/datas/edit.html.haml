@@ -1,0 +1,37 @@
+= render 'shared/header'
+
+.user-content
+  .user-content__left
+    = image_tag "boy.jpg" , class: "user-content__left--image"
+    = image_tag "boy2.png" , class: "user-content__left--image"
+    .user-content__left--name
+      = "name : #{@user.name}"
+    %br
+    .user-content__left--email
+      = "email : #{@user.email}"
+    %br
+  .user-content__right
+    .user-content__right--physical
+      physical-data
+    / - @data.each do
+    = form_with(model: @data, url: data_path) do |f|
+      .user__list
+        (record_data)
+        %br
+        %br
+        = f.label :record_day
+        = f.date_field :record_day
+        %br
+        = f.label :weight
+        = f.text_field :weight
+        %br
+        = f.label :height
+        = f.text_field :height
+        = f.button "record"
+
+.footer
+  .button__icon
+    = link_to root_path, class: "button__icon--link" do
+      top
+    = link_to user_path(current_user.id), class: "button__icon--link" do
+      Back
