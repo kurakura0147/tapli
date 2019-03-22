@@ -1,0 +1,40 @@
+@import "./variable";
+
+.data-content {
+  padding: 20px 120px;
+  @include body-content;
+  canvas#myLine2Chart {
+    position: relative;
+    height: 220px;
+    bottom: 45px;
+  }
+  .flex {
+  display: flex;
+  justify-content:space-between;
+  }
+  &__left {
+    &--image {
+      @include user-image;
+      opacity: 0.1;
+      top: 140px;
+    }
+  }
+  &__right {
+    &--image {
+      @include user-image;
+      opacity: 0.1;
+      top: 140px;
+      right: 120px;
+    }
+  }
+}
+
+.data-analysis {
+  text-align: right;
+  @include user-profile;
+  position: absolute;
+  top: 200px;
+  left: 500px;
+  color: $content-color;
+}
+

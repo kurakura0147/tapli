@@ -50,4 +50,19 @@ $content-color: #84634d;
   color: white;
 }
 
+@mixin user-image {
+  height: 500px;
+  color: $content-color;
+  background-color: white;
+  border-radius: 120px;
+  border:solid 4px $content-color;
+  position: absolute;
 
+}
+
+@mixin body-content {
+  height: calc(100vh - 280px);
+  margin: 120px 0 20px;
+  background-color: $base-color;
+  color: $content-color;
+}

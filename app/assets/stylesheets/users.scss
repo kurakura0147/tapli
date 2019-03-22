@@ -2,22 +2,14 @@
 
 .user-content {
   @include flex_center;
-  height: calc(100vh - 280px);
-  margin: 120px 0 20px;
+  @include body-content;
   padding: 20px 240px;
-  background-color: $base-color;
-  color: $content-color;
   &__left {
     width: 400px;
     &--image {
-      height: 500px;
-      position: absolute;
+      @include user-image;
       top: calc(100vh/5.6);
       left:120px;
-      color: $content-color;
-      background-color: white;
-      border-radius: 120px;
-      border:solid 4px $content-color;
 
     }
     &--name {

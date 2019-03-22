@@ -1,0 +1,30 @@
+= render 'shared/header'
+
+.data-content
+  %canvas#myLine2Chart
+  .flex
+    .data-content__left
+      = image_tag "boy.jpg" , class: "data-content__left--image"
+    .data-content__right
+      = image_tag "boy2.png" , class: "data-content__right--image"
+
+.data-analysis
+  - @user_data.each do |data|
+    = "最新データ日 : #{data.record_day}"
+    %br
+    = "weight : #{data.weight} [kg]"
+    %br
+    = "#{data.height}[cm]の場合の標準体重 : #{(data.height.to_i)**2 * 22/10000} [kg]"
+    %br
+    = "標準体重との差 :  #{data.weight.to_i - (data.height.to_i)**2 * 22/10000} [kg]"
+    %br
+    = "目標までの消費カロリー : #{(data.weight.to_i - (data.height.to_i)**2 * 22/10000)*7200} [kcal]"
+
+
+
+.footer
+  .button__icon
+    = link_to root_path, class: "button__icon--link" do
+      top
+    = link_to user_path(current_user.id), class: "button__icon--link" do
+      Back
