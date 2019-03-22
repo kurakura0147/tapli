@@ -10,11 +10,9 @@
       @include user-image;
       top: calc(100vh/5.6);
       left:120px;
-
     }
     &--name {
       @include user-profile;
-
     }
     &--email {
       @include user-profile;
@@ -32,12 +30,7 @@
       padding: 10px;
     }
     &--gragh {
-      width:740px;
-      height: 380px;
-      line-height: 600px;
-      background-color: white;
-      border-radius: 10px;
-      border:solid 2px $content-color;
+      @include user-gragh;
       .user__list {
         height: 100%;
       }

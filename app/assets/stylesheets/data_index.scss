@@ -1,30 +1,30 @@
 @import "./variable";
 
 .data-content {
-  padding: 20px 120px;
+  @include flex_center;
   @include body-content;
-  canvas#myLine2Chart {
-    position: relative;
-    height: 220px;
-    bottom: 45px;
-  }
-  .flex {
-  display: flex;
-  justify-content:space-between;
-  }
+  padding: 20px 240px;
   &__left {
+    width: 400px;
+    opacity: 0.3;
     &--image {
       @include user-image;
-      opacity: 0.1;
-      top: 140px;
+      top: calc(100vh/5.6);
+      left:120px;
     }
   }
   &__right {
-    &--image {
-      @include user-image;
-      opacity: 0.1;
-      top: 140px;
-      right: 120px;
+    width: 460px;
+    margin-left: 20px;
+    &--gragh {
+      @include user-gragh;
+      opacity: 0.3;
+      .user__list {
+        height: 100%;
+      }
+        canvas#myLine2Chart {
+          vertical-align: middle;
+        }
     }
   }
 }
@@ -34,7 +34,7 @@
   @include user-profile;
   position: absolute;
   top: 200px;
-  left: 500px;
+  left: 200px;
   color: $content-color;
 }
 
