@@ -31,7 +31,6 @@ class UsersController < ApplicationController
     gon.weight = weight
     gon.standard_weight = standard_weight
     gon.day = day
-
   end
 
 end
