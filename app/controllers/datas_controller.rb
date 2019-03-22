@@ -42,7 +42,7 @@ class DatasController < ApplicationController
   def create
     @data = Datum.new(params_datum)
     @data.save!
-    redirect_to user_path
+    redirect_to user_path(id: current_user.id)
   end
 
   def show

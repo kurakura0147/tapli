@@ -1,14 +1,21 @@
 = render 'shared/header'
 
 .user-content
-  Please record
-  = form_with(model: @data, url: datas_path) do |f|
-    = f.label :weight
-    = f.text_field :weight
-    = f.label :height
-    = f.text_field :height
-    = f.label :record_day
-    = f.date_field :record_day
-    = f.button "record"
+  .data__new--list
+    = form_with(model: @data, url: datas_path) do |f|
+      %br
+      = f.date_field :record_day, class: "data__new--list-day"
+      = image_tag "weight.png", class: "data__new--list-image-left"
+      = f.text_field :weight, placeholder: "体重の入力 [kg]", class: "data__new--list-weight"
+      = f.text_field :height, placeholder: "身長の入力 [cm]", class: "data__new--list-height"
+      = image_tag "height.png", class: "data__new--list-image-right"
+      = f.button "record", class: "data__new--list-button"
 
 //体重計に乗っている姿と身長を測っている姿をそれぞれ表示して、フォームに入力。上のセンターに日付の入力欄の表示
+
+.footer
+  .button__icon
+    = link_to root_path, class: "button__icon--link" do
+      top
+    = link_to user_path(id: current_user.id), class: "button__icon--link" do
+      mypage
