@@ -65,3 +65,30 @@ $content-color: #84634d;
   background-color: $base-color;
   color: $content-color;
 }
+
+@mixin new-form {
+  padding: 20px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  background-color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border:solid 4px $content-color;
+  color: $content-color;
+}
+
+@mixin user-gragh {
+  width:740px;
+  height: 380px;
+  line-height: 600px;
+  background-color: white;
+  border-radius: 10px;
+  border:solid 2px $content-color;
+}
+
+@mixin position {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+

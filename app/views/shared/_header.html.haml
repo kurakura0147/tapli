@@ -4,18 +4,11 @@
       .i.fas.fa-bars
         %ul.child
           %li.child-hidden
-          = link_to sample_datas_path do
-            %li.child
-              how to page
-          = link_to root_path do
-            %li.child
-              menu2
-          = link_to root_path do
-            %li.child
-              menu3
-          = link_to root_path do
-            %li.child
-              menu4
+          %li.child
+            how to page
+          / = link_to sample_datas_path do
+          /   %li.child
+          /     how to page
   = link_to root_path, class: "header__center" do
     .i.fas.fa-bed
     .header__center--logo
@@ -35,9 +28,6 @@
               %li.child
                 .i.fas.fa-user-check
                 user-mypage
-            = link_to root_path do
-              %li.child
-                user-menu
             = link_to destroy_user_session_path, method: :delete do
               %li.child
                 .i.fas.fa-sign-out-alt

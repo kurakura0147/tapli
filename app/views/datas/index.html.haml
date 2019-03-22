@@ -1,12 +1,13 @@
 = render 'shared/header'
 
 .data-content
-  %canvas#myLine2Chart
-  .flex
-    .data-content__left
-      = image_tag "boy.jpg" , class: "data-content__left--image"
-    .data-content__right
-      = image_tag "boy2.png" , class: "data-content__right--image"
+  .data-content__left
+    = image_tag "boy.jpg" , class: "data-content__left--image"
+    = image_tag "boy2.png" , class: "data-content__left--image"
+
+  .data-content__right
+    .data-content__right--gragh
+      %canvas#myLine2Chart
 
 .data-analysis
   - @user_data.each do |data|
@@ -19,8 +20,6 @@
     = "標準体重との差 :  #{data.weight.to_i - (data.height.to_i)**2 * 22/10000} [kg]"
     %br
     = "目標までの消費カロリー : #{((data.weight.to_i - (data.height.to_i)**2 * 22/10000)*7200).to_s(:delimited)} [kcal]"
-
-
 
 .footer
   .button__icon

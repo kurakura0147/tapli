@@ -2,71 +2,42 @@
 
 .data__new--list {
   &-day {
-    color: $content-color;
-    padding: 20px;
-    position: absolute;
     top: 25%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
-    background-color: white;
-    font-weight: bold;
-    font-size: 20px;
-    border:solid 4px $content-color;
+    @include new-form;
   }
   &-weight {
-    color: $content-color;
-    padding: 20px;
-    position: absolute;
     top: 70%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
-    background-color: white;
-    font-weight: bold;
-    font-size: 20px;
-    border:solid 4px $content-color;
+    left: 30%;
+    @include new-form;
   }
   &-height {
-    color: $content-color;
     z-index: 40;
-    padding: 20px;
-    position: absolute;
     top: 70%;
-    left: 80%;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
-    background-color: white;
-    font-weight: bold;
-    font-size: 20px;
-    border:solid 4px $content-color;
+    left: 70%;
+    @include new-form;
   }
   &-button {
-    padding: 30px;
-    position: absolute;
     top: 75%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
-    background-color: white;
-    font-weight: bold;
-    font-size: 20px;
-    border:solid 4px $content-color;
-    color: $content-color;
+    @include new-form;
     &:hover {
-      background-color:$content-color;
-      color: white;
+      @include icon-hover;
     }
   }
   &-image {
     height: 400px;
     &-right {
-      position: absolute;
+      @include position;
       top: 52%;
-      left: 80%;
-      transform: translate(-50%, -50%);
+      left: 70%;
       height: 400px;
       z-index: 20;
+    }
+    &-left {
+      @include position;
+      left: 30%;
+      height: 380px;
     }
   }
 
