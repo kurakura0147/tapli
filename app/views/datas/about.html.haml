@@ -13,8 +13,8 @@
 
 .main-content
   .main-content__sample
-    .main-content__sample--title
-      Let's Record
+    = link_to new_user_registration_path, class: "main-content__sample--title" do
+      Let's Record , Let's Sign-up
     .main-content__sample--do
       .main-content__sample--left
         .i.fas.fa-bed.fa-4x &nbsp;

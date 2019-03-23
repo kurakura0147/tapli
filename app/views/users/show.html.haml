@@ -2,16 +2,14 @@
 
 .user-content
   .user-content__left
-    = image_tag "boy.jpg" , class: "user-content__left--image"
-    = image_tag "boy2.png" , class: "user-content__left--image"
-
-    .user-content__left--name
+    = image_tag "boy.jpg" , class: "user-content__left--image", id: "opacity-content"
+    .user-content__left--name#hidden-content
       = "name : #{@user.name}"
     %br
-    .user-content__left--email
+    .user-content__left--email#hidden-content
       = "email : #{@user.email}"
     %br
-    .user-content__left--physical
+    .user-content__left--physical#hidden-content
       - @user_data.each do |data|
         = "Latest date : #{data.record_day}"
         %br
@@ -21,10 +19,27 @@
         %br
         = "BMI :  #{(data.weight.to_i*10000.quo(data.height.to_i**2)).round(1).to_f}"
   .user-content__right
-    .user-content__right--physical
+    .user-content__right--physical#hidden-content
       physical-gragh
-    .user-content__right--gragh
+    .user-content__right--gragh#opacity-content
       %canvas#myLine2Chart
+
+.data-analysis#fadein-content
+  - @user_data.each do |data|
+    = "最新データ日 : #{data.record_day}"
+    %br
+    = "weight : #{data.weight} [kg]"
+    %br
+    - standard_weight =(data.height.to_i)**2 * 22/10000
+    = "#{data.height}[cm]の場合の標準体重 : #{standard_weight} [kg]"
+    %br
+    = "標準体重との差 :  #{data.weight.to_i - standard_weight} [kg]"
+    %br
+    = "目標までの消費カロリー : #{((data.weight.to_i - standard_weight)*7200).to_s(:delimited)} [kcal]"
+  .calc-analysis#fadein-content
+    %input#calc-weight
+    %br
+    1日当たりの必要消費カロリーは
 
 .footer
   .button__icon
@@ -42,5 +57,9 @@
           = link_to edit_data_path do
             %li.child
               edit gragh
-    = link_to datas_path, class: "button__icon--link" do
+    / = link_to datas_path, class: "button__icon--link", id: "analysis-button" do
+    .button__icon--link#analysis-button
       analysis page
+    = link_to user_path do
+      .button__icon--link#fade-inout
+        mypage

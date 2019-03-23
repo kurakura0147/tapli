@@ -89,7 +89,6 @@ ul.child{
         height: calc(100vh - 240px);
         margin-right:20px;
         position: relative;
-        right:0px;
       }
     }
   }
@@ -102,13 +101,16 @@ ul.child{
     font-size: 40px;
     &--title {
       font-size: 80px;
-      margin-bottom: 60px;
+      color: $content-color;
+      &:hover {
+        color: yellow;
+      }
     }
     &--do {
       display: flex;
       justify-content: space-around;
       align-items:flex-end;
-
+      margin-top: 80px;
     }
     &--center {
       display: flex;

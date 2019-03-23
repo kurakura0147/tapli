@@ -1,15 +1,15 @@
-$(document).on('turbolinks:load', function() {
+jQuery(document).on('turbolinks:load', function() {
     //メニューのドロップダウン機能
-        $('.down-menu').hover(function(){
-            $("ul:not(:animated)", this).slideDown();
+        jQuery('.down-menu').hover(function(){
+            jQuery("ul:not(:animated)", this).slideDown();
         }, function(){
-            $("ul.child",this).slideUp();
+            jQuery("ul.child",this).slideUp();
         });
 
-        $('.up-menu').hover(function(){
-            $("ul:not(:animated)", this).slideDown();
+        jQuery('.up-menu').hover(function(){
+            jQuery("ul:not(:animated)", this).slideDown();
         }, function(){
-            $("ul.parent",this).slideUp();
+            jQuery("ul.parent",this).slideUp();
         });
 
 });

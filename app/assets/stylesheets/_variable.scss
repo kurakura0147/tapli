@@ -24,13 +24,13 @@ $content-color: #84634d;
   padding: 10px;
   border-radius: 20px;
   display: inline-block;
-  position: relative;
-  left: -90px;
-  top: 40px;
   background-color: white;
   font-weight: bold;
   font-size: 20px;
   border:solid 4px $content-color;
+  position: relative;
+  left: -90px;
+  top: 40px;
 }
 
 @mixin icon-button {
@@ -52,6 +52,7 @@ $content-color: #84634d;
 
 @mixin user-image {
   height: 500px;
+  width: 500px;
   color: $content-color;
   background-color: white;
   border-radius: 120px;

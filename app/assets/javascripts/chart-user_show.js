@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+jQuery(document).on('turbolinks:load', function() {
         var ctx = document.getElementById("myLine2Chart");
         var myLine2Chart = new Chart(ctx, {
           //グラフの種類
