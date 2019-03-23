@@ -46,6 +46,6 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  database: d7c1ja860ol85g
+  username: khbfoomoiobhlp
+  password: 9d99986498953bf903d5eea8408819ba7326b6beff90889dc3a384d2640fbde5
