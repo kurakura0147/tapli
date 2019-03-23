@@ -11,5 +11,4 @@ jQuery(document).on('turbolinks:load', function() {
         }, function(){
             jQuery("ul.parent",this).slideUp();
         });
-
 });
