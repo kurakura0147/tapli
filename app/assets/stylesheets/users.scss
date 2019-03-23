@@ -40,3 +40,55 @@
     }
   }
 }
+.data-content {
+  @include flex_center;
+  @include body-content;
+  padding: 20px 240px;
+  &__left {
+    width: 400px;
+    opacity: 0.3;
+    &--image {
+      @include user-image;
+      top: calc(100vh/5.6);
+      left:120px;
+    }
+  }
+  &__right {
+    width: 460px;
+    margin-left: 20px;
+    &--gragh {
+      @include user-gragh;
+      opacity: 0.3;
+      .user__list {
+        height: 100%;
+      }
+        canvas#myLine2Chart {
+          vertical-align: middle;
+        }
+    }
+  }
+}
+
+#fade-inout {
+  display: none;
+}
+
+.data-analysis {
+  @include user-profile;
+  text-align: right;
+  padding: 20px;
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  color: $content-color;
+  display: none;
+}
+
+.calc-analysis {
+  @include new-form;
+  text-align: left;
+  left: 800px;
+  bottom: 32px;
+  width: 400px;
+  display: none;
+}
