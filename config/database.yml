@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: tapli_production
-  username: tapli
-  password: <%= ENV['TAPLI_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
