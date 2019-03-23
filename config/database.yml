@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: tapli_production
-  username: tapli
-  password: <%= ENV['TAPLI_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
