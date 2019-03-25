@@ -9,20 +9,29 @@
     .user-content__left--email#hidden-content
       = "email : #{@user.email}"
     %br
-    .user-content__left--physical#hidden-content
-      - @user_data.each do |data|
-        = "Latest date : #{data.record_day}"
-        %br
-        = "height : #{data.height} cm"
-        %br
-        = "weight : #{data.weight} kg"
-        %br
-        = "BMI :  #{(data.weight.to_i*10000.quo(data.height.to_i**2)).round(1).to_f}"
+    - unless @user_data.blank?
+      .user-content__left--physical#hidden-content
+        - @user_data.each do |data|
+          = "Latest date : #{data.record_day}"
+          %br
+          = "height : #{data.height} cm"
+          %br
+          = "weight : #{data.weight} kg"
+          %br
+          = "BMI :  #{(data.weight.to_i*10000.quo(data.height.to_i**2)).round(1).to_f}"
+
   .user-content__right
     .user-content__right--physical#hidden-content
       physical-gragh
     .user-content__right--gragh#opacity-content
       %canvas#myLine2Chart
+    - if @user_data.blank?
+      .user-content__right--nodata
+        .i.fas.fa-exclamation-circle
+        Sorry, no data
+        %br
+        &nbsp;&nbsp; Please, new record
+
 
 .data-analysis#fadein-content
   - @user_data.each do |data|
@@ -31,20 +40,26 @@
     = "weight : #{data.weight} [kg]"
     %br
     - standard_weight =(data.height.to_i)**2 * 22/10000
+    - difference_weight = data.weight.to_i - standard_weight
     = "#{data.height}[cm]の場合の標準体重 : #{standard_weight} [kg]"
     %br
-    = "標準体重との差 :  #{data.weight.to_i - standard_weight} [kg]"
+    = "標準体重との差 :  #{difference_weight} [kg]"
     %br
-    = "目標までの消費カロリー : #{((data.weight.to_i - standard_weight)*7200).to_s(:delimited)} [kcal]"
+    = "目標までの消費カロリー : #{(difference_weight*7200).to_s(:delimited)} [kcal]"
   .calc-analysis#fadein-content
     %input#calc-weight
+    %input#calc-day
+
     %br
     1日当たりの必要消費カロリーは
+
 
 .footer
   .button__icon
     = link_to root_path, class: "button__icon--link" do
       top
+    = link_to :back, class: "button__icon--link" do
+      back
     = link_to new_data_path, class: "button__icon--link" do
       new
     .up-menu
@@ -57,9 +72,9 @@
           = link_to edit_data_path do
             %li.child
               edit gragh
-    / = link_to datas_path, class: "button__icon--link", id: "analysis-button" do
-    .button__icon--link#analysis-button
-      analysis page
     = link_to user_path do
       .button__icon--link#fade-inout
         mypage
+    - unless @user_data.blank?
+      .button__icon--link#analysis-button
+        analysis page
