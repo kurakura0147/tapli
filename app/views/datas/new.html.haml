@@ -1,6 +1,8 @@
 = render 'shared/header'
 
 .user-content
+  .user-content__right--title
+    new physical
   .data__new--list
     = form_with(model: @data, url: datas_path) do |f|
       %br

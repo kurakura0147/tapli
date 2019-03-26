@@ -1,21 +1,26 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name, autofocus: true
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+= render 'shared/header'
+
+.user-content
+  .user-content__left
+    = image_tag "boy.jpg" , class: "user-content__left--image", id: "opacity-content"
+
+  .user-content__right
+    .user-content__right--title
+      Log-in Page
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.text_field :name, autofocus: true, placeholder: "name", class: "user-content__right--name"
+      .field
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "user-content__right--email"
+      .field
+        = f.password_field :password, autocomplete: "current-password", placeholder: "password", class: "user-content__right--pass"
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me, class: "user-content__right--button-check"
+          = f.label :remember_me, class: "user-content__right--button-remmenber"
+      .actions
+        = f.submit "Log in", class: "user-content__right--button-in"
+    = render "devise/shared/links"
+
+.footer
+  .button__icon
