@@ -1,0 +1,69 @@
+@import "./variable";
+
+.user-content__right {
+  &--title {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    background-color: $base-color;
+    border-radius: 20px;
+    font-weight: bold;
+    border:solid 4px $content-color;
+    padding: 20px;
+    z-index: 100;
+  }
+  &--name {
+    @include new-form;
+    top: 30%;
+    right: 10%;
+  }
+  &--email {
+    @include new-form;
+    top: 45%;
+    right: 10%;
+  }
+  &--pass {
+    @include new-form;
+    top: 60%;
+    right: 10%;
+  }
+  &--lepass {
+    @include new-form;
+    top: 60%;
+    right: 22%;
+  }
+  &--ripass {
+    @include new-form;
+    top: 60%;
+    right: 0%;
+  }
+  &--button {
+    &-in {
+      @include new-form;
+      top: 75%;
+      right: 30%;
+    }
+    &-up {
+      @include new-form;
+      top: 75%;
+      right: 20%;
+    }
+    &-check {
+      @include new-form;
+      top: 94%;
+      right: 42.7%;
+      z-index: 40;
+    }
+    &-remmenber {
+      @include new-form;
+      top: 94%;
+      right: 26%;
+      z-index: 20;
+    }
+    &-forget {
+      @include new-form;
+      top: 94%;
+      right: 4%;
+    }
+  }
+}
