@@ -38,6 +38,11 @@
           vertical-align: middle;
         }
     }
+    &--nodata {
+      @include new-form;
+      top: 50%;
+      right: 12%;
+    }
   }
 }
 .data-content {

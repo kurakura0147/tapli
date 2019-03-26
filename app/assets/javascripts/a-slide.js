@@ -6,7 +6,7 @@ jQuery(document).on('turbolinks:load', function() {
             jQuery(".main-content__about--up li:first").animate({
             marginLeft : "-100%"
             }, {
-            duration : 4000,
+            duration : 6000,
             complete : function() {
                 //処理完了時に先頭要素を削除
                 jQuery(".main-content__about--up li:first").remove();
@@ -14,7 +14,7 @@ jQuery(document).on('turbolinks:load', function() {
                 clone.clone(true).insertAfter(jQuery(".main-content__about--up li:last"));
             }
             });
-        }, 4000);
+        }, 1000);
 
 });
 
