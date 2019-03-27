@@ -18,7 +18,7 @@ class DatasController < ApplicationController
 
   def edit
     @user = User.find(current_user.id)
-    @data = Datum.includes(:user).find(13)
+    @data = Datum.where(user_id: @user).order("record_day ASC")
   end
 
   def update

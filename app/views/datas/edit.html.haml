@@ -2,31 +2,31 @@
 
 .user-content
   .user-content__left
-    = image_tag "boy.jpg" , class: "user-content__left--image"
-    .user-content__left--name
-      = "name : #{@user.name}"
-    %br
-    .user-content__left--email
-      = "email : #{@user.email}"
-    %br
+    %table#physical
+      %tr
+        %th record_day
+        %th weight [kg]
+        %th height [cm]
+        %th edit
+        .table__list
+          - @data.each do |data|
+            %tr
+              %td
+                = data.record_day
+              %td
+                = data.weight
+              %td
+                = data.height
+              %td
+                = submit_tag "edit"
+
   .user-content__right
-    .user-content__right--physical
-      physical-data
-    / - @data.each do
-    = form_with(model: @data, url: data_path) do |f|
-      .user__list
-        (record_data)
-        %br
-        %br
-        = f.label :record_day
-        = f.date_field :record_day
-        %br
-        = f.label :weight
-        = f.text_field :weight
-        %br
-        = f.label :height
-        = f.text_field :height
-        = f.button "record"
+    .user-content__right--title
+      Mypage
+    .user-content__right--physical#hidden-content
+      physical-gragh
+    .user-content__right--gragh#opacity-content
+      %canvas#myLine2Chart
 
 .footer
   .button__icon

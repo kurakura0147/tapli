@@ -57,16 +57,25 @@
       @include new-form;
       top: 75%;
       right: 30%;
+      &:hover {
+        @include icon-hover;
+      }
     }
     &-up {
       @include new-form;
       top: 75%;
       right: 20%;
+      &:hover {
+        @include icon-hover;
+      }
     }
     &-edit {
       @include new-form;
       top: 75%;
       right: 6%;
+      &:hover {
+        @include icon-hover;
+      }
     }
 
     &-check {
@@ -80,11 +89,17 @@
       top: 94%;
       right: 26%;
       z-index: 20;
+      &:hover {
+        @include icon-hover;
+      }
     }
     &-forget {
       @include new-form;
       top: 94%;
       right: 4%;
+      &:hover {
+        @include icon-hover;
+      }
     }
   }
 }

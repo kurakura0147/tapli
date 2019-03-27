@@ -1,0 +1,24 @@
+@import "./variable";
+
+table#physical {
+  position: relative;
+  right: 60px;
+  text-align: center;
+  tr,td {
+    border:solid 2px $content-color;
+    padding: 10px;
+  }
+  th {
+    @include icon-hover;
+    border:solid 2px white;
+    padding: 10px;
+    font-weight: bold;
+  }
+  thead, tbody {
+    display: block;
+  }
+  tbody {
+    overflow-y: scroll;
+    height: 420px;
+  }
+}
