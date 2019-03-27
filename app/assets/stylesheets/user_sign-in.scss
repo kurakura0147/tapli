@@ -37,6 +37,21 @@
     top: 60%;
     right: 0%;
   }
+  &--cepass {
+    @include new-form;
+    top: 75%;
+    right: 10%;
+  }
+  &--sub {
+    position: relative;
+    left: 30%;
+    top: 38px;
+  }
+  &--subpass {
+    position: relative;
+    left: 30%;
+    top: 130px;
+  }
   &--button {
     &-in {
       @include new-form;
@@ -48,6 +63,12 @@
       top: 75%;
       right: 20%;
     }
+    &-edit {
+      @include new-form;
+      top: 75%;
+      right: 6%;
+    }
+
     &-check {
       @include new-form;
       top: 94%;
