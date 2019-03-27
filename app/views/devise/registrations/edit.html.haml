@@ -10,41 +10,32 @@
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
       = devise_error_messages!
       .field
-        = f.label :name
-        %br/
-        = f.text_field :name, autofocus: true
+        = f.text_field :name, autofocus: true, placeholder: "name", class: "user-content__right--name"
       .field
-        = f.label :email
-        %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email"
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "user-content__right--email"
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         %div
           Currently waiting confirmation for: #{resource.unconfirmed_email}
       .field
-        = f.label :password
-        %i (leave blank if you don't want to change it)
-        %br/
-        = f.password_field :password, autocomplete: "new-password"
-        - if @minimum_password_length
-          %br/
-          %em
-            = @minimum_password_length
-            characters minimum
+        .user-content__right--sub (leave blank if you don't want to change it)
+        = f.password_field :password, autocomplete: "new-password", placeholder: "pass (#{@minimum_password_length} characters min.)", class: "user-content__right--lepass"
       .field
-        = f.label :password_confirmation
-        %br/
-        = f.password_field :password_confirmation, autocomplete: "new-password"
+        = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password_confirmation", class: "user-content__right--ripass"
       .field
-        = f.label :current_password
-        %i (we need your current password to confirm your changes)
-        %br/
-        = f.password_field :current_password, autocomplete: "current-password"
+        .user-content__right--subpass (we need your current password to confirm your changes)
+        = f.password_field :current_password, autocomplete: "current-password", placeholder: "current-password", class: "user-content__right--cepass"
       .actions
-        = f.submit "Update"
-    %h3 Cancel my account
-    %p
-      Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-    = link_to "Back", :back
+        = f.submit "Update", class: "user-content__right--button-edit"
+      #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "user-content__right--button-forget"}
 
 .footer
   .button__icon
+    = link_to root_path, class: "button__icon--link" do
+      top
+    = link_to :back, class: "button__icon--link" do
+      back
+    = link_to new_data_path, class: "button__icon--link" do
+      new
+    = link_to user_path(@user) do
+      .button__icon--link#fade-inout
+        mypage
