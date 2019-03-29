@@ -31,6 +31,7 @@ class DatasController < ApplicationController
   def destroy
     @data = Datum.find(params[:id])
     @data.destroy
+
   end
 
   def about
