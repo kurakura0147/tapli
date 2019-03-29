@@ -1,0 +1,61 @@
+.footer
+  .button__icon
+    = link_to root_path, class: "button__icon--link" do
+      top
+
+    - if controller.controller_name == "users"
+      - if controller.action_name == "show"
+        = link_to new_data_path, class: "button__icon--link" do
+          new
+        .up-menu
+          .button__icon--link
+            edit
+            %ul.parent
+              = link_to edit_user_registration_path do
+                %li.child
+                  edit user
+              = link_to datas_path do
+                %li.child
+                  edit gragh
+        - unless @user_data.blank?
+          .button__icon--link#analysis-button
+            analysis page
+        = link_to user_path, class: "button__icon--link" do
+          back
+
+    - if controller.controller_name == "registrations"
+      - if controller.action_name == "edit"
+        = link_to user_path(id: current_user.id) do
+          .button__icon--link#fade-inout
+            mypage
+        = link_to new_data_path, class: "button__icon--link" do
+          new
+        = link_to datas_path, class: "button__icon--link" do
+          edit gragh
+        = link_to :back, class: "button__icon--link" do
+          back
+
+    - if controller.controller_name == "datas"
+      = link_to user_path(id: current_user.id) do
+        .button__icon--link#fade-inout
+          mypage
+      - if controller.action_name == "new"
+        .up-menu
+          .button__icon--link
+            edit
+            %ul.parent
+              = link_to edit_user_registration_path do
+                %li.child
+                  edit user
+              = link_to datas_path do
+                %li.child
+                  edit gragh
+
+      - if controller.action_name == "index"
+        = link_to new_data_path, class: "button__icon--link" do
+          new
+        = link_to edit_user_registration_path, class: "button__icon--link" do
+          edit user
+
+      = link_to :back, class: "button__icon--link" do
+        back

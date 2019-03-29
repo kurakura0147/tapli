@@ -13,11 +13,4 @@
       = image_tag "height.png", class: "data__new--list-image-right"
       = f.button "record", class: "data__new--list-button"
 
-//体重計に乗っている姿と身長を測っている姿をそれぞれ表示して、フォームに入力。上のセンターに日付の入力欄の表示
-
-.footer
-  .button__icon
-    = link_to root_path, class: "button__icon--link" do
-      top
-    = link_to user_path(id: current_user.id), class: "button__icon--link" do
-      mypage
+= render 'shared/footer'
