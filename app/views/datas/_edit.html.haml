@@ -1,0 +1,5 @@
+= form_with(model: @data, url: edit_data_path) do |f|
+  = f.date_field :record_day
+  = f.text_field :weight
+  = f.text_field :height
+  = f.button "record"
