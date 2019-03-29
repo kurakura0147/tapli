@@ -28,14 +28,4 @@
         = f.submit "Update", class: "user-content__right--button-edit"
       #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "user-content__right--button-forget"}
 
-.footer
-  .button__icon
-    = link_to root_path, class: "button__icon--link" do
-      top
-    = link_to :back, class: "button__icon--link" do
-      back
-    = link_to new_data_path, class: "button__icon--link" do
-      new
-    = link_to user_path(@user) do
-      .button__icon--link#fade-inout
-        mypage
+= render 'shared/footer'

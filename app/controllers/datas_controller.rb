@@ -2,6 +2,11 @@ class DatasController < ApplicationController
 
     before_action :authenticate_user!, except: [:sample, :about ]
 
+  def index
+    @user = User.find(current_user.id)
+    @data = Datum.where(user_id: @user).order("record_day ASC")
+  end
+
   def new
     @data = Datum.new
   end
@@ -10,10 +15,6 @@ class DatasController < ApplicationController
     @data = Datum.new(params_datum)
     @data.save!
     redirect_to user_path(id: current_user.id)
-  end
-
-  def show
-    @data = Datum.find()
   end
 
   def edit
@@ -25,6 +26,11 @@ class DatasController < ApplicationController
     @data = Datum.includes(:user).find(13)
     @data.update(params_datum)
     redirect_to user_path
+  end
+
+  def destroy
+    @data = Datum.find(params[:id])
+    @data.destroy
   end
 
   def about

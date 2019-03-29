@@ -55,28 +55,4 @@
     %br
     1日当たりの必要消費カロリーは
 
-
-.footer
-  .button__icon
-    = link_to root_path, class: "button__icon--link" do
-      top
-    = link_to :back, class: "button__icon--link" do
-      back
-    = link_to new_data_path, class: "button__icon--link" do
-      new
-    .up-menu
-      .button__icon--link
-        edit
-        %ul.parent
-          = link_to edit_user_registration_path do
-            %li.child
-              edit user
-          = link_to edit_data_path do
-            %li.child
-              edit gragh
-    = link_to user_path do
-      .button__icon--link#fade-inout
-        mypage
-    - unless @user_data.blank?
-      .button__icon--link#analysis-button
-        analysis page
+= render 'shared/footer'

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   }
 
   root 'datas#about'
-  resources :datas, only: %i(index new create edit update) do
+  resources :datas, only: %i(index new create show edit update destroy) do
     collection do
       get :about
       get :sample

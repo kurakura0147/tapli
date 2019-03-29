@@ -8,6 +8,7 @@
         %th weight [kg]
         %th height [cm]
         %th edit
+        %th delete
         .table__list
           - @data.each do |data|
             %tr
@@ -18,19 +19,16 @@
               %td
                 = data.height
               %td
-                = submit_tag "edit"
+                = link_to "select", edit_data_path(data), class: "select-button", id: "edit-button", remote: true
+              %td
+                = link_to "select", data_path(data), class: "select-button", id: "delete-button", method: :delete, remote: true
 
   .user-content__right
     .user-content__right--title
-      Mypage
+      Edit physical
     .user-content__right--physical#hidden-content
       physical-gragh
     .user-content__right--gragh#opacity-content
       %canvas#myLine2Chart
 
-.footer
-  .button__icon
-    = link_to root_path, class: "button__icon--link" do
-      top
-    = link_to user_path(current_user.id), class: "button__icon--link" do
-      Back
+= render 'shared/footer'
