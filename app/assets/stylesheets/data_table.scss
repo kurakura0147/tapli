@@ -2,15 +2,16 @@
 
 table#physical {
   position: relative;
-  right: 60px;
-  text-align: center;
+  right: 160px;
+  width: 560px;
   tr,td {
     border:solid 2px $content-color;
-    padding: 10px;
+    padding: 18px;
   }
   th {
     @include icon-hover;
-    border:solid 2px white;
+    border:solid 1px white;
+    text-align: center;
     padding: 10px;
     font-weight: bold;
   }
@@ -19,6 +20,16 @@ table#physical {
   }
   tbody {
     overflow-y: scroll;
-    height: 420px;
+    height: 440px;
+    text-align: center;
+  }
+}
+
+.select-button {
+  padding: 10px;
+  border-radius: 20px;
+  border:solid 2px $content-color;
+  &:hover {
+    @include icon-hover;
   }
 }
