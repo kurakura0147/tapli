@@ -48,11 +48,11 @@
     = "標準体重との差 :  #{difference_weight} [kg]"
     %br
     = "目標までの消費カロリー : #{(difference_weight*7200).to_s(:delimited)} [kcal]"
-  .calc-analysis#fadein-content
-    %input#calc-weight
-    %input#calc-day
+  / .calc-analysis#fadein-content
+  /   %input#calc-weight
+  /   %input#calc-day
 
-    %br
-    1日当たりの必要消費カロリーは
+  /   %br
+  /   1日当たりの必要消費カロリーは
 
 = render 'shared/footer'

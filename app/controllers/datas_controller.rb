@@ -25,13 +25,11 @@ class DatasController < ApplicationController
   def update
     @data = Datum.includes(:user).find(13)
     @data.update(params_datum)
-    redirect_to user_path
   end
 
   def destroy
     @data = Datum.find(params[:id])
     @data.destroy
-
   end
 
   def about
