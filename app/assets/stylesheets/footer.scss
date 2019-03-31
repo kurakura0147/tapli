@@ -1,0 +1,18 @@
+@import "./variable";
+
+.footer {
+  @include nav;
+  text-align: center;
+  .button__icon {
+    @include flex_center;
+    &--link {
+      @include icon-button;
+      &:hover {
+        @include icon-hover;
+      }
+    }
+  }
+}
+#analysis-button {
+  cursor : pointer;
+}

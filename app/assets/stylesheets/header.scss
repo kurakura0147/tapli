@@ -1,0 +1,25 @@
+@import "./variable";
+
+.header {
+  position: fixed;
+  width: calc(100vw - 160px);
+  top: 0;
+  @include nav;
+  @include flex_center;
+  justify-content: space-around;
+  margin-bottom: 400px;
+  font-size: 40px;
+  z-index: 40;
+  &__center {
+    @include flex_center;
+    color: $content-color;
+    text-decoration: none;
+    &--logo {
+      font-size: 70px;
+      margin: {
+        left: 40px;
+        right: 40px;
+      }
+    }
+  }
+}
