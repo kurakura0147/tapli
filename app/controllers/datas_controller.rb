@@ -30,6 +30,7 @@ class DatasController < ApplicationController
   def destroy
     @data = Datum.find(params[:id])
     @data.destroy
+    redirect_to :action => 'index'
   end
 
   def about
