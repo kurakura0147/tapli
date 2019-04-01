@@ -1,0 +1,16 @@
+= render 'shared/header'
+
+.user-content
+  .user-content__right--title
+    edit physical
+  .data__new--list
+    = form_with(model: @data, url: data_path) do |f|
+      %br
+      = f.date_field :record_day, class: "data__new--list-day"
+      = image_tag "weight.png", class: "data__new--list-image-left"
+      = f.text_field :weight, placeholder: "体重の入力 [kg]", class: "data__new--list-weight"
+      = f.text_field :height, placeholder: "身長の入力 [cm]", class: "data__new--list-height"
+      = image_tag "height.png", class: "data__new--list-image-right"
+      = f.button "update", class: "data__new--list-button"
+
+= render 'shared/footer'

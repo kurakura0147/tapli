@@ -7,6 +7,11 @@ table#physical {
   tr,td {
     border:solid 2px $content-color;
     padding: 18px;
+    input {
+      display: inline-block;
+      font-size: 100%;
+      width: 86px;
+    }
   }
   th {
     @include icon-hover;
@@ -14,6 +19,12 @@ table#physical {
     text-align: center;
     padding: 10px;
     font-weight: bold;
+    &#day {
+      width: 108px;
+    }
+    &#data {
+      width: 86px;
+    }
   }
   thead, tbody {
     display: block;

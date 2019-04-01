@@ -18,13 +18,13 @@ class DatasController < ApplicationController
   end
 
   def edit
-    @user = User.find(current_user.id)
-    @data = Datum.where(user_id: @user).order("record_day ASC")
+    @data = Datum.find(params[:id])
   end
 
   def update
-    @data = Datum.includes(:user).find(13)
+    @data = Datum.find(params[:id])
     @data.update(params_datum)
+    redirect_to :action => 'index'
   end
 
   def destroy
