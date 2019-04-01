@@ -4,11 +4,11 @@
   .user-content__left
     %table#physical
       %tr
-        %th record_day
-        %th weight [kg]
-        %th height [cm]
-        / %th edit
-        %th delete
+        %th#day record_day
+        %th#data weight [kg]
+        %th#data height [cm]
+        %th#data edit
+        %th#data delete
         .table__list
           - @data.each do |data|
             %tr
@@ -18,10 +18,10 @@
                 = data.weight
               %td
                 = data.height
-              / %td
-              /   = link_to "select", edit_data_path(data), class: "select-button", id: "edit-button", remote: true
               %td
-                = link_to "select", data_path(data), class: "select-button", id: "delete-button", method: :delete, remote: true
+                = link_to "select", edit_data_path(data), class: "select-button", id: "edit-button"
+              %td
+                = link_to "select", data_path(data), class: "select-button", id: "delete-button", method: :delete, remote: true, data: { confirm: '削除しますか？' }
 
   .user-content__right
     .user-content__right--title
